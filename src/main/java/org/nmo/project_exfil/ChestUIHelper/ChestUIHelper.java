@@ -29,7 +29,7 @@ public class ChestUIHelper implements Listener {
     public void onUIButtonClick(InventoryClickEvent event) {
         Inventory inventory = event.getInventory();
         Player player = (Player) event.getWhoClicked();
-
+        // TODO
     }
 
     /**
