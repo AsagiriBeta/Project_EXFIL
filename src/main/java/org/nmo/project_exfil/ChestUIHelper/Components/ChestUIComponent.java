@@ -4,7 +4,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Base class for components of ChestUI
+ */
 public abstract class ChestUIComponent {
+    /**
+     * Return the actual position in inventory
+     * @param row The required row
+     * @param col The required col
+     * @return The actual index in inventory
+     */
+    private static Integer toPosition(int row, int col) {
+        return row * 9 + col;
+    }
+
     /**
      * Returns the number of rows the component takes up
      * @return The number of rows the component takes up
@@ -28,6 +41,16 @@ public abstract class ChestUIComponent {
      * @param col The column to render onto
      */
     void render(@NotNull Inventory inventory, @NotNull Integer row, @NotNull Integer col) {
+        // Do nothing by default
+    }
+
+    /**
+     * Updates the component
+     * @param inventory The inventory to render onto
+     * @param row The row to render onto
+     * @param col The column to render onto
+     */
+    void update(@NotNull Inventory inventory, @NotNull Integer row, @NotNull Integer col) {
         // Do nothing by default
     }
 
